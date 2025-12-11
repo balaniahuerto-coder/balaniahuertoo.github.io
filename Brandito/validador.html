@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SENATI - Validador de Firmas</title>
+    <meta name="description" content="Sistema de validación de firmas digitales para documentos SENATI">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="validador.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+    <div class="background-gradient"></div>
+
+    <div class="container">
+        <header class="header">
+            <h1 class="title">SENATI</h1>
+            <h2 class="subtitle">Validador de Firmas</h2>
+        </header>
+
+        <main class="main-content">
+            <!-- Sección 1: Documento -->
+            <section class="card document-card">
+                <div class="card-header">
+                    <h3>1. Documento</h3>
+                </div>
+                <div class="card-body">
+                    <div class="document-preview" id="documentPreview">
+                        <img src="document.png" alt="Documento SENATI" class="document-image">
+                        <div class="overlay">
+                            <span class="overlay-text">Click para ver PDF</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Sección 2: Firmas Digitales -->
+            <section class="card signatures-card">
+                <div class="card-header">
+                    <h3>2. Firmas Digitales</h3>
+                </div>
+                <div class="card-body">
+                    <!-- Firma 1: Rocío -->
+                    <div class="signature-item" id="signature1">
+                        <div class="signature-header" data-target="rocio">
+                            <span class="signature-number">1.</span>
+                            <span class="signature-name">ROCIO GEOVANY TORO NORABUENA</span>
+                            <span class="arrow">▼</span>
+                        </div>
+                        <div class="signature-details" id="rocio">
+                            <div class="signature-info">
+                                <div class="info-row">
+                                    <span class="info-label">Fecha de Firma:</span>
+                                    <span class="info-value">15-02-2025 08:29:20</span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="info-label">Tipo de Firma:</span>
+                                    <span class="info-value">PAdES (CAdES Detached)</span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="info-label">Serial del Certificado:</span>
+                                    <span class="info-value">77E33C24FECA8DF1C6</span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="info-label">Hash:</span>
+                                    <span class="info-value">SHA-256</span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="info-label">Emisor:</span>
+                                    <span class="info-value">C=PE,ST=LIMA,L=LIMA,OU=see current address at
+                                        www.camerfirma.com.pe/address,OU=AC CAMERFIRMA PERÚ CERTIFICADOS -
+                                        2016,SERIALNUMBER=20566302447,2.5.4.97=NTRPE-20566302447,O=CAMERFIRMA PERÚ
+                                        S.A.C,CN=AC CAMERFIRMA PERÚ CERTIFICADOS - 2016</span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="info-label">Validez:</span>
+                                    <span class="info-value validity-status valid">Válido</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Firma 2: José -->
+                    <div class="signature-item" id="signature2">
+                        <div class="signature-header" data-target="jose">
+                            <span class="signature-number">2.</span>
+                            <span class="signature-name">JOSE LUIS CERRON ARGANDOÑA</span>
+                            <span class="arrow">▼</span>
+                        </div>
+                        <div class="signature-details" id="jose">
+                            <div class="signature-info">
+                                <div class="info-row">
+                                    <span class="info-label">Fecha de Firma:</span>
+                                    <span class="info-value">15-02-2025 11:46:42</span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="info-label">Tipo de Firma:</span>
+                                    <span class="info-value">PAdES (CAdES Detached)</span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="info-label">Serial del Certificado:</span>
+                                    <span class="info-value">44EADB6FA422F843E3</span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="info-label">Hash:</span>
+                                    <span class="info-value">SHA-256</span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="info-label">Emisor:</span>
+                                    <span class="info-value">C=PE,ST=LIMA,L=LIMA,OU=see current address at
+                                        www.camerfirma.com.pe/address,OU=AC CAMERFIRMA PERÚ CERTIFICADOS -
+                                        2016,SERIALNUMBER=20566302447,2.5.4.97=NTRPE-20566302447,O=CAMERFIRMA PERÚ
+                                        S.A.C,CN=AC CAMERFIRMA PERÚ CERTIFICADOS - 2016</span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="info-label">Validez:</span>
+                                    <span class="info-value validity-status valid">Válido</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2025 SENATI - Servicio Nacional de Adiestramiento en Trabajo Industrial</p>
+        </footer>
+    </div>
+
+    <!-- Modal para ver el documento -->
+    <div class="modal" id="documentModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Documento SENATI</h3>
+                <button class="close-btn" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <img src="document.png" alt="Documento SENATI completo" class="modal-image">
+            </div>
+        </div>
+    </div>
+
+    <script src="validador.js"></script>
+</body>
+
+</html>
